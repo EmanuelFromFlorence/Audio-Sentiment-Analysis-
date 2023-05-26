@@ -3,15 +3,22 @@ import traceback
 import streamlit as st
 import speech_recognition as sr
 from transformers import pipeline
-import streamlit.components.v1 as components
 
 # Set Streamlit app layout to wide
 st.set_page_config(layout="wide")
 
+# Designing the interface
+st.title("🎧 Audio Analysis 📝")
+st.write("[Joas](https://huggingface.co/Pontonkid)")
+
 # Define Streamlit app sidebar
-st.sidebar.title("Settings")
-st.sidebar.markdown("Upload an audio file for analysis:")
-audio_file = st.sidebar.file_uploader("Upload", type=["wav"])
+st.sidebar.title("Audio Analysis")
+st.sidebar.write("The Audio Analysis app is a powerful tool that allows you to analyze audio files and gain valuable insights from them. It combines speech recognition and sentiment analysis techniques to transcribe the audio and determine the sentiment expressed within it.")
+
+# Upload audio file
+st.sidebar.header("Upload Audio")
+audio_file = st.sidebar.file_uploader("Browse", type=["wav"])
+upload_button = st.sidebar.button("Upload")
 
 def perform_sentiment_analysis(text):
     # Load the sentiment analysis model
@@ -39,7 +46,7 @@ def transcribe_audio(audio_file):
 
 def main():
     # Perform analysis when audio file is uploaded
-    if audio_file:
+    if audio_file and upload_button:
         try:
             # Perform audio transcription
             transcribed_text = transcribe_audio(audio_file)
@@ -59,17 +66,17 @@ def main():
             positive_icon = "👍"
 
             if sentiment_label == "NEGATIVE":
-                st.write(f"{negative_icon} Negative (Score: {sentiment_score})")
+                st.write(f"{negative_icon} Negative (Score: {sentiment_score})", unsafe_allow_html=True)
             else:
                 st.empty()
 
             if sentiment_label == "NEUTRAL":
-                st.write(f"{neutral_icon} Neutral (Score: {sentiment_score})")
+                st.write(f"{neutral_icon} Neutral (Score: {sentiment_score})", unsafe_allow_html=True)
             else:
                 st.empty()
 
             if sentiment_label == "POSITIVE":
-                st.write(f"{positive_icon} Positive (Score: {sentiment_score})")
+                st.write(f"{positive_icon} Positive (Score: {sentiment_score})", unsafe_allow_html=True)
             else:
                 st.empty()
 
@@ -84,4 +91,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
