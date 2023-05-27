@@ -13,7 +13,8 @@ st.write("[Joas](https://huggingface.co/Pontonkid)")
 
 # Define Streamlit app sidebar
 st.sidebar.title("Audio Analysis")
-st.sidebar.write("The Audio Analysis app is a powerful tool that allows you to analyze audio files and gain valuable insights from them. It combines speech recognition and sentiment analysis techniques to transcribe the audio and determine the sentiment expressed within it.")
+st.sidebar.write("The Audio Analysis app is a powerful tool that allows you to analyze audio files and gain valuable insights from them."
+                 "It combines speech recognition and sentiment analysis techniques to transcribe the audio and determine the sentiment expressed within it.")
 
 # Upload audio file
 st.sidebar.header("Upload Audio")
@@ -81,7 +82,7 @@ def main():
                 st.empty()
 
             # Provide additional information about sentiment score interpretation
-            st.info("The sentiment score measures how strongly positive, negative, or neutral the feelings or opinions are. "
+            st.info("The sentiment score assesses the intensity of positive, negative, or neutral emotions or opinions "
                     "A higher score indicates a stronger sentiment, while a lower score indicates a weaker sentiment.")
 
         except Exception as ex:
