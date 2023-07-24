@@ -11,9 +11,9 @@ This project is a deep learning model that can be used to classify audio data in
 
 **Usage:**
 
-* To use it, you will need to provide it with an audio file.
+* To use it, simply upload an audio file,
 * The model will then classify the audio file into positive, negative, or neutral sentiment.
-* You can use the model to improve the customer experience, improve the security of systems, or for other purposes.
+* You can use the model to improve the customer experience, or for other purposes.
 
 **Contributing:**
 
