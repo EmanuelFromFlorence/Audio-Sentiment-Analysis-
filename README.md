@@ -1,5 +1,6 @@
 
 
+
 This project is a deep learning model that can be used to classify audio data into positive, negative, or neutral sentiment. The model is trained on a dataset of audio recordings that have been manually labeled with their sentiment. The system can be used to analyze audio data from a variety of sources, such as customer reviews, phone calls, and social media posts.
 
 
